@@ -132,16 +132,6 @@ else
 fi
 alias cd=' cd'
 alias cdg=' cd "$(git rev-parse --show-toplevel)"' ## git root
-alias -- -=' cd -'
-alias 1=' cd -'
-alias 2=' cd -2'
-alias 3=' cd -3'
-alias 4=' cd -4'
-alias 5=' cd -5'
-alias 6=' cd -6'
-alias 7=' cd -7'
-alias 8=' cd -8'
-alias 9=' cd -9'
 
 alias l='ls -lh --group-directories-first'
 alias ll='ls -lhA --group-directories-first'
@@ -166,7 +156,6 @@ fi
 
 # Others commands shortcuts
 alias dg='desk go'
-alias co='pygmentize -O style=monokai -f console256 -g'
 alias zd='z --del'
 alias mu='mutt'
 alias mf='mutt -F'
@@ -326,9 +315,7 @@ for method in GET HEAD POST PUT DELETE PURGE TRACE OPTIONS; do
 done
 
 # Curl & web helpers
-alias dl='curl --continue-at - --location --progress-bar --remote-name --remote-time' ## download a file
 alias weather='curl -A curl wttr.in'
-alias wget-site='wget --mirror -p --convert-links -P'
 alias header='curl-header'
 alias purge='curl-purge'
 
