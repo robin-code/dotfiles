@@ -1,28 +1,19 @@
 #!/usr/bin/env bash
 
 declare -A COPIES=(
-    ['bash/bashrc']='.bashrc'
     ['zsh/zshenv']='.zshenv'
-    ['others/cmus_autosave']='.config/cmus/autosave'
-    ['others/ssh_config']='.ssh/config'
+    ['others/git_ssh_config']='.ssh/config'
 )
 
 declare -A SYMLINKS=(
     ['bash/inputrc']='.inputrc'
-    ['bash/profile']='.profile'
     ['zsh/zshrc']='.zshrc'
-    ['scripts/create-desk.sh']='bin/create-desk'
     ['vim/vim']='.vim'
     ['vim/vimrc']='.vimrc'
-    ['hammerspoon']='.hammerspoon'
-    ['luakit']='.config/luakit'
-    ['mutt/muttrc']='.muttrc'
     ['others/ackrc']='.ackrc'
-    ['others/bcrc']='.bcrc'
     ['others/curlrc']='.curlrc'
     ['others/cvsignore']='.cvsignore'
     ['others/dircolors']='.dircolors'
-    ['others/gemrc']='.gemrc'
     ['others/git-templates']='.git-templates'
     ['others/gitattributes']='.gitattributes'
     ['others/gitignore-global']='.gitignore-global'
@@ -30,39 +21,10 @@ declare -A SYMLINKS=(
     ['others/lesskey']='.lesskey'
     ['others/my.cnf']='.my.cnf'
     ['others/nanorc']='.nanorc'
-    ['others/remarkable.settings']='.remarkable/remarkable.settings'
-    ['others/sift.conf']='.sift.conf'
-    ['others/spacemacs']='.spacemacs'
-    ['others/sshrc']='.sshrc'
-    ['others/sshrc.d']='.sshrc.d'
     ['others/tmux.conf']='.tmux.conf'
     ['others/wgetrc']='.wgetrc'
-    ['qutebrowser/keys.conf']='.config/qutebrowser/keys.conf'
-    ['qutebrowser/qutebrowser.conf']='.config/qutebrowser/qutebrowser.conf'
-    ['ranger/commands.py']='.config/ranger/commands.py'
-    ['ranger/rc.conf']='.config/ranger/rc.conf'
-    ['sublime-text-3/Packages/ChromeRemoteReload.py']='Library/Application Support/Sublime Text 3/Packages/ChromeRemoteReload.py'
-    ['sublime-text-3/Packages/CommandOnSave']='Library/Application Support/Sublime Text 3/Packages/CommandOnSave'
-    ['sublime-text-3/Packages/PHP']='Library/Application Support/Sublime Text 3/Packages/PHP'
-    ['sublime-text-3/Packages/Snippets']='Library/Application Support/Sublime Text 3/Packages/Snippets'
-    ['sublime-text-3/Packages/User/AdvancedNewFile.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/AdvancedNewFile.sublime-settings'
-    ['sublime-text-3/Packages/User/anmol.tmTheme']='Library/Application Support/Sublime Text 3/Packages/User/anmol.tmTheme'
-    ['sublime-text-3/Packages/User/CommandOnSave.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/CommandOnSave.sublime-settings'
-    ['sublime-text-3/Packages/User/Default.sublime-keymap.mac']='Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-keymap'
-    ['sublime-text-3/Packages/User/Default.sublime-mousemap']='Library/Application Support/Sublime Text 3/Packages/User/Default.sublime-mousemap'
-    ['sublime-text-3/Packages/User/Emmet.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/Emmet.sublime-settings'
-    ['sublime-text-3/Packages/User/markdown.css']='Library/Application Support/Sublime Text 3/Packages/User/markdown.css'
-    ['sublime-text-3/Packages/User/MarkdownPreview.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings'
-    ['sublime-text-3/Packages/User/Package Control.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings'
-    ['sublime-text-3/Packages/User/PHP Companion.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/PHP Companion.sublime-settings'
-    ['sublime-text-3/Packages/User/Preferences.sublime-settings']='Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings'
-    ['vscode/settings.json']='Library/ApplicationSupport/Code/User/settings.json'
-    ['vscode/keybindings.json']='Library/ApplicationSupport/Code/User/keybindings.json'
-    ['vscode/snippets']='Library/ApplicationSupport/Code/User/snippets'
 )
 
-####################################################################################
-####################################################################################
 ####################################################################################
 
 DOTFILES_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

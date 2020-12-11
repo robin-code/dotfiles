@@ -1,6 +1,0 @@
-<snippet>
-	<content><![CDATA[return null;$0]]></content>
-	<tabTrigger>rn</tabTrigger>
-	<scope>source.php - string - comment</scope>
-	<description>return true</description>
-</snippet>

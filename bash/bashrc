@@ -1,4 +1,4 @@
-export DOTFILES_PATH=~/.dotfiles/public
+export DOTFILES_PATH=~/dotfiles
 export BIN_PATH=${BIN_PATH:-~/bin}
 
 eval "`dircolors`"
@@ -35,9 +35,6 @@ mkdir -p "$HOME/.cache"
 export HISTFILE="$HOME/.cache/bash_history"
 export LESSHISTFILE=-
 export MYSQL_HISTFILE=/dev/null
-
-# Fix bspwm java apps handling
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 export PS1="[${WHITE}\u${NONE}@${RED}\h${NONE} ${CYAN}\w${NONE}]\\$\[${RESET}\] "
 export VISUAL='vim'
@@ -121,9 +118,8 @@ fi
 
 # Use GNU tools instead of bsd ones
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    alias ls='\gls --color=auto'
     alias awk='\gawk'
-    alias sed='\gsed'
+#     alias sed='\gsed'
     alias grep='\ggrep'
 fi
 
@@ -160,17 +156,6 @@ alias kkl='k -Ah --no-vcs'
 
 # 1 letter commands shortcuts
 alias p=' dirs -v | head -10' ## most used dirs for current session
-alias x=' exit'
-alias d='desk'
-alias h='history'
-alias j='jobs'
-alias t='tmux'
-alias v='open-with-vim'
-alias e='open-with-vim'
-alias s='open-with-sublime-text'
-alias a='open-with-atom'
-alias n='nano'
-alias g='git'
 if [[ "$OSTYPE" == "darwin"* ]]; then
     alias c=" clear && printf '\e[3J'"
     alias o='open'
@@ -235,56 +220,6 @@ alias ss='sift -n' ## with sift
 alias ff='find . -type f -iname ' ## insensitive filename
 alias fr='find-and-replace' ## find and replace in current dir
 
-# Git
-alias gcl='git clone --recursive'
-alias gcf='git config'
-alias gs='git status'
-alias gst='git status-short'
-alias ga='git add'
-alias gaa='git add -A'
-alias gl='git log'
-alias gls='git log --stat' ## include which files were altered
-alias glp='git log -p' ## display the full diff of each commit
-alias gll='git pretty-log'
-alias gbl='git blame -b -w'
-alias gd='git diff'
-alias gdw='git diff --word-diff'
-alias gdt='git difftool -d'
-alias gw='git whatchanged'
-alias gg='git grep -n -C2 -E'
-alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gcu='git reset --soft HEAD~' ## undo commit
-alias gcm='git commit -m'
-alias gca='git commit -a'
-alias gcam='git commit -a -m'
-alias gb='git branch'
-alias gbm='git branch --merged'
-alias gbr='git branch -r'
-alias gbu='git remote update origin --prune' ## update remote list
-alias gm='git merge'
-alias gms='git merge --squash'
-alias gmm='git merge -m'
-alias gt='git tag'
-alias gco='git checkout'
-alias gf='git fetch'
-alias gfo='git fetch origin'
-alias gp='git pull'
-alias gpull='git pull'
-alias gpush='git push'
-alias gpr='git pull --rebase'
-alias gget='git get'
-alias gput='git put'
-alias ggp='git get-put'
-alias grb='git rebase'
-alias gss='git stash save'
-alias gsa='git stash apply'
-alias gsp='git stash pop'
-alias gsl='git stash list'
-alias ggc='git gc --aggressive'
-alias cgd='cdiff -s -w 0' ## columned & colored git diff
-alias cgs='columns-git-show' ## columned & colored git diff
-
 # Docker
 alias doi="docker images"
 alias dov="docker volume"
@@ -339,11 +274,11 @@ else
     alias record="ffmpeg -f x11grab -s 1366x768 -an -r 16 -loglevel quiet -i :0.0 -b:v 5M -y" ## then pass a filename
 fi
 
-# rsync
-alias rsync-copy="rsync -av --progress -h --exclude-from=$HOME/.cvsignore"
-alias rsync-move="rsync -av --progress -h --remove-source-files --exclude-from=$HOME/.cvsignore"
-alias rsync-update="rsync -avu --progress -h --exclude-from=$HOME/.cvsignore"
-alias rsync-synchronize="rsync -avu --delete --progress -h --exclude-from=$HOME/.cvsignore"
+# # rsync
+# alias rsync-copy="rsync -av --progress -h --exclude-from=$HOME/.cvsignore"
+# alias rsync-move="rsync -av --progress -h --remove-source-files --exclude-from=$HOME/.cvsignore"
+# alias rsync-update="rsync -avu --progress -h --exclude-from=$HOME/.cvsignore"
+# alias rsync-synchronize="rsync -avu --delete --progress -h --exclude-from=$HOME/.cvsignore"
 
 # Files permissions
 alias 400='chmod 400 -R'
@@ -410,8 +345,3 @@ alias cu="composer update"
 alias cr="composer require"
 alias ci="composer install"
 alias cda="composer dump-autoload"
-
-# Laravel helpers
-alias art='php artisan'
-alias mig-install='php artisan migrate:install'
-alias mig-seed='php artisan migrate:refresh --seed'

@@ -138,14 +138,6 @@ function open-with-sublime-text() {
     fi;
 }
 
-# Opens the current directory in Atom, otherwise opens the given location
-function open-with-atom() {
-    if [ $# -eq 0 ]; then
-        atom .;
-    else
-        atom "$@";
-    fi;
-}
 
 # Opens the current directory in Vim, otherwise opens the given location
 function open-with-vim() {

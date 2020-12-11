@@ -1,18 +1,33 @@
 [user]
-    # Don't guess the user's (os) identity
-    useConfigOnly = true
-    name = Luc Vancrayelynghe
-    email = luc.vancrayelynghe@gmail.com
-
+	name = robin-li
+	email = robin-li-cn@outlook.com
 [core]
     pager = less -FRS
     editor = vim
     autocrlf = false
-    whitespace = trailing-space,space-before-tab,cr-at-eol
     excludesfile = ~/.gitignore-global
     # Only use on Windows networks share : git config --local core.filemode false
     # filemode = false
+	attributesfile = ~/.gitattributes
+	trustctime = false
 
+	# Treat spaces before tabs and all kinds of trailing whitespace as an error.
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+	# Make `git rebase` safer on macOS.
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+
+	# Prevent showing files whose names contain non-ASCII symbols as unversioned.
+	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	precomposeunicode = false
+
+	# Speed up commands involving untracked files such as `git status`.
+	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	untrackedCache = true
+    editor = vim
 [color]
 	branch = always
 	diff = always
@@ -42,7 +57,7 @@
 
 [init]
     templatedir = ~/.git-templates
-
+	defaultBranch = main
 [commit]
     template = ~/.git-templates/git-commit
 
@@ -54,10 +69,20 @@
 
 [push]
     default = current
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+[pull]
+	rebase = false
+[merge]
 
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
 [diff]
     tool = icdiff
+[help]
 
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
 [difftool]
     prompt = false
 
@@ -66,7 +91,7 @@
 
 [alias]
     # Show defined aliases
-    aliases             = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+    # aliases   = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
 
     # Do everything we can to synchronize all changes
     get                 = !git pull --rebase && git submodule update --init --recursive
@@ -107,3 +132,4 @@
     # Open changed files
     subl                = !git-ls-files -m -z | xargs -0 subl
     sublall             = !git-ls-files -m -o --exclude-standard -z | xargs -0 subl
+

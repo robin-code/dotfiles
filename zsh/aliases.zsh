@@ -39,7 +39,6 @@ else
     alias .......='cd ../../../../../..'
 fi
 
-# Directories working
 alias pwd=' pwd'
 alias cd=' cd'
 alias -- -=' cd -'
@@ -66,18 +65,8 @@ alias ktt='exa -hlTlL=2 --group-directories-first'
 alias kttt='exa -hlTlL=3 --group-directories-first'
 
 # 1 letter commands shortcuts
-alias c=" clear && echo -ne '\033c' && printf '\e[3J'"
 alias p=' dirs -v | head -10' ## most used dirs for current session
-alias x=' exit'
-alias d='desk'
-alias h='history'
-alias j='jobs'
-alias t='tmux'
-alias v='open-with-vim'
-alias e='open-with-vim'
-alias s='open-with-sublime-text'
-alias a='open-with-atom'
-alias n='nano'
+
 
 # Others commands shortcuts
 alias dg='desk go'
@@ -87,14 +76,12 @@ alias rd='rmdir'
 alias md='mkdir -p'
 alias mcd='mkdir-cd'
 alias mkcd='mkdir-cd'
-alias trm='trash-put'
-alias rmf="rm -rf"
 alias rmrf="rm -rf"
+
 alias cpr="cp -r"
 alias bak='backup-file'
 alias psy='psysh'
 alias run='make'
-alias phpl='php -l'
 alias tailf='tail -f'
 alias less='less -r'
 alias whence='type -a'
@@ -123,67 +110,6 @@ alias ss='sift -n' ## with sift
 alias rg='rg -S' ## with ripgreprg
 alias ff='find . -type f -iname ' ## insensitive filename
 alias fr='find-and-replace' ## find and replace in current dir
-
-# Git
-alias cdg=' cd "$(git rev-parse --show-toplevel)"' ## git root
-alias g='git'
-alias gcl='git clone --recursive'
-alias gcf='git config'
-alias gs='git status'
-alias gst='git status-short'
-alias ga='git add'
-alias gaa='git add -A'
-alias gmv='g mv'
-alias grm='g rm'
-alias gl='git log'
-alias gls='git log --stat' ## include which files were altered
-alias glp='git log -p' ## display the full diff of each commit
-alias gll='git pretty-log'
-alias gbl='git blame -b -w'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias gdw='git diff --word-diff'
-alias gdcw='git diff --cached --word-diff'
-alias gdt='git difftool'
-alias gw='git whatchanged'
-alias gg='git grep -n -C2 -E'
-alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gcu='git reset --soft HEAD~' ## undo commit
-alias gcm='git commit -m'
-alias gca='git commit -a'
-alias gcam='git commit -a -m'
-alias gb='git branch'
-alias gbs='git branch --sort=committerdate'
-alias gbm='git branch --merged'
-alias gbr='git branch -r'
-alias gbu='git remote update origin --prune' ## update remote list
-alias gm='git merge'
-alias gms='git merge --squash'
-alias gmm='git merge -m'
-alias gt='git tag'
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias gcop='git checkout preprod'
-alias gcor='git checkout recette'
-alias gf='git fetch'
-alias gfo='git fetch origin'
-alias gp='git pull'
-alias gpull='git pull'
-alias gpush='git push'
-alias gpr='git pull --rebase'
-alias gsu='git set-upstream'
-alias gget='git get'
-alias gput='git put'
-alias ggp='git get-put'
-alias grb='git rebase'
-alias gss='git stash save'
-alias gsa='git stash apply'
-alias gsp='git stash pop'
-alias gsl='git stash list'
-alias ggc='git gc --aggressive'
-alias cgd='cdiff -s -w 0' ## columned & colored git diff
-alias cgs='columns-git-show' ## columned & colored git diff
 
 # Docker
 alias doi="docker images"
@@ -236,9 +162,6 @@ alias nrp='npm run prod'
 # ngrok
 alias ng='ngrok http 80 -region eu'
 
-# Dev helpers
-alias cs='php-cs-fixer --using-cache=false --config=$HOME/.dotfiles/public/others/php_cs fix'
-
 # SSH helpers
 alias tunnel='ssh -f -N' ## Create a tunnel
 alias tunnel-mysql='ssh -N -L 3307:localhost:3306' ## Create a MySQL tunnel
@@ -250,11 +173,17 @@ alias week='date +%V'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Network & ISP tests
-alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias myips="ifconfig -a | grep -o 'inet6\? \(ad\?dr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:|adr:)? ?/, \"\"); print }' | grep -v '127.0.0.1' | grep -v '::1'"
 alias localip="ifconfig | grep -Eo 'inet (addr:|adr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 alias ipstats="netstat -ntu | tail -n +3 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -n"
+# Show active network interfaces
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
 alias ports="lsof -ni | grep LISTEN"
 alias ns="nslookup"
 alias he="sudo $EDITOR /etc/hosts"
@@ -276,3 +205,71 @@ alias clbin="curl -F 'clbin=<-' https://clbin.com"
 # Because Oo
 alias tableflip="echo '(ノಠ益ಠ)ノ彡┻━┻'" ## see https://gist.github.com/endolith/157796
 alias utf8test="wget -qO- http://8n1.org/utf8" ## test terminal UTF8 capabilities
+
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Merge PDF files, preserving hyperlinks
+# Usage: `mergepdf input{1,2,3}.pdf`
+alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+
+
+# Intuitive map function
+# For example, to list all directories that contain a certain file:
+# find . -name .gitattributes | map dirname
+alias map="xargs -n1"
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "${method}"="lwp-request -m '${method}'"
+done
+
+# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"
+
+# Kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec ${SHELL} -l"
+
+# Print each PATH entry on a separate line
+alias path='echo -e ${PATH//:/\\n}'
+
+
+#alias for cnpm
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+  --cache=$HOME/.npm/.cache/cnpm \
+  --disturl=https://npm.taobao.org/dist \
+  --userconfig=$HOME/.cnpmrc"
+
+# 编辑器简写
+alias vi="vim"
+## alias k8s
+alias kgp="kubectl get pods"
+alias kgd="kubectl get deployment"
+alias kgs="kubectl get services "
+alias kdp="kubectl describe pods "
+
+
+# maven 构建命令跳过测试别名
+alias mi="mvn clean install -Dmaven.test.skip=true"
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+
+# Get week number
+alias week='date +%V'
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias cls="clear"
+alias sz="source ~/.zshrc"

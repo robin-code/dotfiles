@@ -76,18 +76,7 @@ alias llc='ls -lhAU --group-directories-first' ## "c" for sort by creation date
 alias lls='ls -lhAS --group-directories-first' ## "s" for sort by size
 
 # 1 letter commands shortcuts
-alias c=" clear && printf '\033[3J'"
 alias p=' dirs -v | head -10' ## most used dirs for current session
-alias x=' exit'
-alias h='history'
-alias j='jobs'
-alias v='open-with-vim'
-alias e='open-with-vim'
-alias s='open-with-sublime-text'
-alias a='open-with-atom'
-alias n='nano'
-alias o='xdg-open'
-alias g='git'
 
 # Others commands shortcuts
 alias zd='z --del'
@@ -126,44 +115,6 @@ alias dmesg="dmesg -T|sed -e 's|\(^.*'`date +%Y`']\)\(.*\)|\x1b[0;34m\1\x1b[0m -
 alias f='grep -rinw "." -e ' ## inside files
 alias fa='ack -Hir' ## inside files advanced
 alias ff='find . -type f -iname ' ## insensitive filename
-
-# Git
-alias gcl='git clone'
-alias gs='git status'
-alias gst='git status-short'
-alias ga='git add'
-alias gaa='git add -A'
-alias gl='git log'
-alias gls='git log --stat' ## include which files were altered
-alias glp='git log -p' ## display the full diff of each commit
-alias gll='git pretty-log'
-alias glll='git pretty-log-nomerges'
-alias gd='git diff'
-alias gdt='git difftool -d'
-alias gg='git grep -n -C2 -E'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gca='git commit -a'
-alias gcam='git commit -a -m'
-alias gb='git branch'
-alias gbr='git branch -r'
-alias gm='git merge'
-alias gms='git merge --squash'
-alias gmm='git merge -m'
-alias gt='git tag'
-alias gco='git checkout'
-alias gf='git fetch'
-alias gp='git pull'
-alias gpr='git pull --rebase'
-alias gpull='git pull'
-alias gpush='git push'
-alias gss='git stash save'
-alias gsa='git stash apply'
-alias gsp='git stash pop'
-alias gsl='git stash list'
-alias ggc='git gc --aggressive'
-alias cgd='cdiff -s -w 0' ## columned & colored git diff
-alias cgs='columns-git-show' ## columned & colored git diff
 
 # rsync
 alias rsync-copy="rsync -av --progress -h --exclude-from=$HOME/.cvsignore"

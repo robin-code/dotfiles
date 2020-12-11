@@ -1,0 +1,25 @@
+# 配置文件参数
+# Host : 配置对应的的主机名和 ssh 文件（可以直接填写 ip 地址）
+# HostName : 要登录主机的主机名（建议与 Host 一致）
+# PreferredAuthentications ：配置登录的验证方式(含密码可自行查询配置方式)
+# IdentityFile : 指明上面 User 对应的配置路径
+# User : 登录名（如 github 的 username）
+# Port: 端口号（默认 22）
+#
+#
+
+
+#github
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+User robin-li-cn@outlook.com
+
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/gitee_rsa
+User robin-li-cn@outlook.com
+
+

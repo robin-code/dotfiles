@@ -32,15 +32,3 @@ fi
 # Default editor
 export VISUAL='vim'
 export EDITOR='vim'
-
-# bc (math lib) default config
-export BC_ENV_ARGS=~/.bcrc
-
-# Fix bspwm java apps handling
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Command not found helper
-[[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
-
-# Add hash directory to desks
-[[ -e "$HOME/.desk/desks/" ]] && hash -d desks="$HOME/.desk/desks/"
