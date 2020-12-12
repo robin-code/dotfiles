@@ -263,3 +263,7 @@ alias dt="cd ~/Desktop"
 alias cls="clear"
 alias sz="source ~/.zshrc"
 alias cd.="cd ~/dotfiles"
+alias work="cd ~/work"
+alias github="cd ~/work/github"
+alias robin-pro="cd ~/work/robin-project"
+
