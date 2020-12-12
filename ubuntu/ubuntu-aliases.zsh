@@ -43,7 +43,6 @@ alias dmesg="dmesg -T|sed -e 's|\(^.*'`date +%Y`']\)\(.*\)|\x1b[0;34m\1\x1b[0m -
 alias df='df -h | grep -v tmpfs | grep -v "/docker/"'
 # Datetime helpers
 alias cal='cal -3'
-
 alias svim="sudo vim"
 alias vim="sudo vim"
 alias gmaven="cd /usr/local/lib/maven-3.6.3"
