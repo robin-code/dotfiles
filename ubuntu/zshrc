@@ -33,6 +33,7 @@ source ${DOTFILES_PATH}/common/snippets.zsh
 source ${DOTFILES_PATH}/ubuntu/ubuntu-aliases.zsh
 [[ -n "$DEBUG" ]] && trace-time "export ubuntu custom"
 source ${DOTFILES_PATH}/ubuntu/ubuntu-export.zsh
+[[ -n "$DEBUG" ]] && trace-time "Loading export  alias finished"
 
 
 ZSH_THEME="robbyrussell"
@@ -44,8 +45,11 @@ plugins=(autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
+
+[[ -n "$DEBUG" ]] && trace-time "loading scm-breeze"
 setopt no_complete_aliases
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
+[[ -n "$DEBUG" ]] && trace-time "loading oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
