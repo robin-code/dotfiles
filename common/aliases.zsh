@@ -266,4 +266,5 @@ alias cd.="cd ~/dotfiles"
 alias work="cd ~/work"
 alias github="cd ~/work/github"
 alias robin-pro="cd ~/work/robin-project"
+alias tl="tmux ls"
 
