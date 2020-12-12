@@ -48,3 +48,4 @@ alias du1s='du -hd1 | sort -h' ## sort by size
 
 # Datetime helpers
 alias cal='cal -3'
+alias dun='cd ~/Downloads'

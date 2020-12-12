@@ -1,31 +1,30 @@
 #!/usr/bin/env bash
 
 declare -A COPIES=(
-    ['zsh/zshenv']='.zshenv'
-    ['others/git_ssh_config']='.ssh/config'
-
+    ['common/zshenv']='.zshenv'
+    ['common/git/git_ssh_config']='.ssh/config'
 )
 
 declare -A SYMLINKS=(
     ['bash/inputrc']='.inputrc'
-    ['zsh/zshrc']='.zshrc'
-    ['vim/vim']='.vim'
-    ['vim/vimrc']='.vimrc'
+    ['ubuntu/zshrc']='.zshrc'
+    ['others/vim/vim']='.vim'
+    ['others/vim/vimrc']='.vimrc'
     ['others/ackrc']='.ackrc'
     ['others/curlrc']='.curlrc'
     ['others/cvsignore']='.cvsignore'
     ['others/dircolors']='.dircolors'
-    ['others/git-templates']='.git-templates'
-    ['others/gitattributes']='.gitattributes'
-    ['others/gitignore-global']='.gitignore-global'
-    ['others/gitconfig']='.gitconfig'
+    ['common/git/git-templates']='.git-templates'
+    ['common/git/gitattributes']='.gitattributes'
+    ['common/git/gitignore-global']='.gitignore-global'
+    ['common/git/gitconfig']='.gitconfig'
     ['others/lesskey']='.lesskey'
     ['others/my.cnf']='.my.cnf'
     ['others/nanorc']='.nanorc'
     ['others/tmux.conf']='.tmux.conf'
     ['others/wgetrc']='.wgetrc'
-    ['ranger/commands.py']='.config/ranger/commands.py'
-    ['ranger/rc.conf']='.config/ranger/rc.conf'
+    ['others/ranger/commands.py']='.config/ranger/commands.py'
+    ['others/ranger/rc.conf']='.config/ranger/rc.conf'
 
 )
 

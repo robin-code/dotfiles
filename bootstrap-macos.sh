@@ -7,7 +7,7 @@ declare -A COPIES=(
 
 declare -A SYMLINKS=(
     ['bash/inputrc']='.inputrc'
-    ['zsh/zshrc']='.zshrc'
+    ['osx/zshrc']='.zshrc'
     ['vim/vim']='.vim'
     ['vim/vimrc']='.vimrc'
     ['others/ackrc']='.ackrc'
