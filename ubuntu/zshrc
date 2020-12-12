@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# DEBUG=true
+DEBUG=true
 function trace-time() {
     if [ -n "$TT_START" ]; then
         TT_END=$(date +%s.%N)
@@ -30,7 +30,9 @@ source ${DOTFILES_PATH}/common/functions.zsh
 [[ -n "$DEBUG" ]] && trace-time "Loading comonn snippets.zsh"
 source ${DOTFILES_PATH}/common/snippets.zsh
 [[ -n "$DEBUG" ]] && trace-time "Loading ubuntu alias"
-source ${DOTFILES_PATH}/ubuntu/aliases-linux.zsh
+source ${DOTFILES_PATH}/ubuntu/ubuntu-aliases.zsh
+[[ -n "$DEBUG" ]] && trace-time "export ubuntu custom"
+source ${DOTFILES_PATH}/ubuntu/ubuntu-export.zsh
 
 
 ZSH_THEME="robbyrussell"

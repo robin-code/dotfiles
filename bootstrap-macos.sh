@@ -7,6 +7,7 @@ declare -A COPIES=(
 
 declare -A SYMLINKS=(
     ['bash/inputrc']='.inputrc'
+    ['ubuntu/profile']='/etc/profile'
     ['osx/zshrc']='.zshrc'
     ['vim/vim']='.vim'
     ['vim/vimrc']='.vimrc'
