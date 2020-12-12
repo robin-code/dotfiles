@@ -41,10 +41,13 @@ alias dmesg="dmesg -T|sed -e 's|\(^.*'`date +%Y`']\)\(.*\)|\x1b[0;34m\1\x1b[0m -
 
 # Disk usage
 alias df='df -h | grep -v tmpfs | grep -v "/docker/"'
-alias du='du -h'
-alias du0='du -hd0'
-alias du1='du -hd1 | sort -k2' ## sort by name
-alias du1s='du -hd1 | sort -h' ## sort by size
-
-# Datetime helpers
+maven-3.6.3# Datetime helpers
 alias cal='cal -3'
+alias svim="sudo vim"
+alias vim="sudo vim"
+alias gmaven="cd /usr/local/lib/maven-3.6.3"
+alias grocket="cd /usr/local/lib/rocketmq-4.7"
+alias gkafka="cd /usr/local/lib/kafka_2.13-2.6.0"
+alias gactivemq="cd /usr/local/lib/apache-activemq-5.5.0"
+alias gnginx="cd /usr/local/lib/nginx-1.18.0"
+alias gzk="cd /usr/local/lib/apache-zookeeper-3.6.2"
