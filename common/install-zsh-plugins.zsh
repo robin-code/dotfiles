@@ -20,3 +20,10 @@ if [[ ! -e "$HOME/.scm_breeze" ]]; then
     ~/.scm_breeze/install.sh
 fi
 
+## oh-my-tmux
+if [[ ! -e "$HOME/.tmux.conf.local" ]]; then
+   cd
+   git clone https://github.com/gpakosz/.tmux.git
+   ln -s -f .tmux/.tmux.conf.local
+fi
+

@@ -22,7 +22,7 @@ declare -A SYMLINKS=(
     ['others/lesskey']='.lesskey'
     ['others/my.cnf']='.my.cnf'
     ['others/nanorc']='.nanorc'
-    ['others/tmux.conf']='.tmux.conf'
+    ['others/tmux.conf.local']='.tmux.conf.local'
     ['others/wgetrc']='.wgetrc'
 )
 
