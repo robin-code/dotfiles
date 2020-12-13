@@ -260,7 +260,7 @@ alias week='date +%V'
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias cls="clear"
+alias cl="clear"
 alias sz="source ~/.zshrc"
 alias cd.="cd ~/dotfiles"
 alias work="cd ~/work"
