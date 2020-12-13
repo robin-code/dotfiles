@@ -134,14 +134,14 @@ alias rsync-update="rsync -avu --progress -h --exclude-from=$HOME/.cvsignore"
 alias rsync-synchronize="rsync -avu --delete --progress -h --exclude-from=$HOME/.cvsignore"
 
 # Files permissions
-alias 400='chmod 400 -R'
-alias 600='chmod 600 -R'
-alias 640='chmod 640 -R'
-alias 644='chmod 644 -R'
-alias 740='chmod 740 -R'
-alias 750='chmod 750 -R'
-alias 775='chmod 775 -R'
-alias 777='chmod 777 -R'
+alias 400='sudo chmod 400 -R'
+alias 600='sudo chmod 600 -R'
+alias 640='sudo chmod 640 -R'
+alias 644='sudo chmod 644 -R'
+alias 740='sudo chmod 740 -R'
+alias 750='sudo chmod 750 -R'
+alias 775='sudo chmod 775 -R'
+alias 777='sudo chmod 777 -R'
 alias www="chown www-data:www-data * .* -R"
 alias mx='chmod u+x'
 
