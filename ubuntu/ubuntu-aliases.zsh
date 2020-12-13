@@ -51,3 +51,7 @@ alias gkafka="cd /usr/local/lib/kafka_2.13-2.6.0"
 alias gactivemq="cd /usr/local/lib/apache-activemq-5.5.0"
 alias gnginx="cd /usr/local/lib/nginx-1.18.0"
 alias gzk="cd /usr/local/lib/apache-zookeeper-3.6.2"
+## alias apt
+alias apti="sudo apt-get install"
+alias aptu="sudo apt-get remove"
+alias aptall='sudo apt update ; sudo apt upgrade ;sudo apt purge;sudo apt autoremove;sudo apt clean;sudo apt autoclean;sudo apt check'
