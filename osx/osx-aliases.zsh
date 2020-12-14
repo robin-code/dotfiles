@@ -67,12 +67,6 @@ alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
-## alias brew
-alias brewi="brew install"
-alias brewu="brew uninstall"
-alias brewc="brew install --cask"
-alias brewall='brew update ; brew upgrade ; brew prune ; brew cleanup -s ; brew cask cleanup ; brew doctor'
-
 alias python=python3
 # Cleanup
 alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
