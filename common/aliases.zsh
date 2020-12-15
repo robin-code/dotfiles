@@ -254,6 +254,7 @@ alias kdp="kubectl describe pods "
 # maven 构建命令跳过测试别名
 alias mi="mvn clean install -Dmaven.test.skip=true"
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
+alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 # Get week number
 alias week='date +%V'
