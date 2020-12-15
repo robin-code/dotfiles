@@ -63,9 +63,11 @@ alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
+#alias spotoff="sudo mdutil -a -i off"
 # Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
+#alias spoton="sudo mdutil -a -i on"
+
+alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 alias python=python3
 # Cleanup

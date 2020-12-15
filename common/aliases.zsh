@@ -269,3 +269,11 @@ alias github="cd ~/work/github"
 alias robin-pro="cd ~/work/robin-project"
 alias tl="tmux ls"
 
+## alias git
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbs='git rebase --skip'
+alias grbi='git rebase -i'
+
+alias del="trash-put"       # del / trash are shorter than rmtrash
+#alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"

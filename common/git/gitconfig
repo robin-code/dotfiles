@@ -78,4 +78,6 @@
 
 [alias]
     # Show defined aliases
-    # aliases   = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+    aliases = !"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'"
+	# Show the user email for the current repository
+    whoami = config user.email
