@@ -41,7 +41,7 @@ export ZSH=$HOME/.oh-my-zsh
 autoload -Uz compinit
 compinit
 
-plugins=(git brew dash docker mvn gradle autojump zsh_reload zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker mvn gradle zsh_reload autojump zsh-syntax-highlighting zsh-autosuggestions)
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
