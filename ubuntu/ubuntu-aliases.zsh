@@ -54,4 +54,4 @@ alias gzk="cd /usr/local/lib/apache-zookeeper-3.6.2"
 ## alias apt
 alias apti="sudo apt-get install"
 alias aptu="sudo apt-get remove"
-alias aptall='sudo apt update ; sudo apt upgrade ;sudo apt purge;sudo apt autoremove;sudo apt clean;sudo apt autoclean;sudo apt check'
+alias updateAll='sudo apt update ; sudo apt upgrade ;sudo apt purge;sudo apt autoremove;sudo apt clean;sudo apt autoclean;sudo apt check'

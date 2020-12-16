@@ -24,7 +24,6 @@ alias sudo='sudo ' ## Allow aliases to be sudo’ed
 alias watch='watch ' ## Allow aliases to be watched
 alias halt="osascript -e 'tell app \"System Events\" to shut down'"
 alias reboot="osascript -e 'tell app \"System Events\" to restart'"
-alias agall='brew update ; brew upgrade ; brew prune ; brew cleanup ; brew doctor'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -61,17 +60,7 @@ alias killos="killfinder && killdock && killmenubar"
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
-
-# Disable Spotlight
-#alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-#alias spoton="sudo mdutil -a -i on"
-
-alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-
 alias python=python3
-# Cleanup
-alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
-#alias del="trash-rm"       # del / trash are shorter than trash-rm
-#alias delf="trash-put"
-#alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+# disable rm 
+alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+alias updateAll='brew update ; brew upgrade ; brew prune ; brew cleanup ; brew doctor'
