@@ -56,9 +56,7 @@ alias kttt='exa -hlTlL=3 --group-directories-first'
 
 
 # Others commands shortcuts
-alias zd='z --del'
 alias k9='kill -9'
-alias md='mkdir -p'
 alias mkcd='mkdir-cd'
 alias rmrf="rm -rf"
 
@@ -174,7 +172,7 @@ alias ports="lsof -ni | grep LISTEN"
 alias ns="nslookup"
 
 # Curl & web helpers
-alias dl='curl --continue-at - --location --progress-bar --remote-name --remote-time' ## download a file
+alias cdl='curl --continue-at - --location --progress-bar --remote-name --remote-time' ## download a file
 alias wget-site='wget --mirror -p --convert-links -P'
 alias header='curl-header'
 alias purge='curl-purge'
@@ -221,11 +219,10 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias cl="clear"
 alias sz="source ~/.zshrc"
+alias sb="source ~/.bashrc"
 alias cd.="cd ~/dotfiles"
 alias work="cd ~/work"
 alias github="cd ~/work/github"
-alias robin-pro="cd ~/work/robin-project"
-alias tl="tmux ls"
 
 ## alias git
 alias grba='git rebase --abort'
@@ -235,3 +232,5 @@ alias grbi='git rebase -i'
 
 alias del="trash-put"       # del / trash are shorter than rmtrash
 #alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
+#alias tmux
+alias tl="tmux ls"
