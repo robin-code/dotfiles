@@ -81,81 +81,6 @@ function compress() {
     esac
 }
 
-# Show aliases and functions cheat-sheet
-function cheat-sheet() {
-    cat "${DOTFILES_PATH}/zsh/aliases.zsh" |
-        perl -p0e 's/\nelse\n.*?\nfi\n/\n/sg' |
-        perl -p0e 's/\nfor .*?done\n//sg' |
-        grep -v "^if " |
-        grep -v "^elif " |
-        grep -v "^fi$" |
-        grep -v "^    if " |
-        grep -v "^    elif " |
-        grep -v "^    else" |
-        grep -v "^    fi$" |
-        sed -r 's/^[[:space:]]+(.*)/\1/g' |
-        sed -r 's/^# (.*)/\x1b[32m\x1b[1m\n# \1\x1b[0m/' |
-        sed -r 's/## (.*)/\x1b[33m## \1\x1b[0m/' |
-        sed -r 's/-- -/-/' |
-        sed -r 's/alias -g/alias/' |
-        sed -r 's/^alias (-g )?([A-Za-z0-9!=._-]+)=(.*)/\x1b[36m\2\x1b[0m\t\3/g' |
-        awk 'BEGIN { FS = "\t" } ; { printf "%-30s %s\n", $1, $2}' |
-        sed -r "s/'(.*)'/\1/" |
-        sed -r 's/"(.*)"/\1/'
-    echo ""
-    echo "\x1b[32m\x1b[1m\n# Functions\x1b[0m"
-
-    cat "${DOTFILES_PATH}/zsh/functions.zsh" |
-        grep "^function" -B1 |
-        grep -v "^--" |
-        awk '{printf "%s%s",$0,NR%2?"\t":"\n" ; }' |
-        awk -F'\t' '{ t = $1; $1 = $2; $2 = t; print; }' |
-        sed -r 's/^function ([A-Za-z0-9!=._-]+)(.*) # (.*)/\x1b[36m\1\x1b[0m\t\x1b[33m\3\x1b[0m/g' |
-        awk 'BEGIN { FS = "\t" } ; { printf "%-35s %s\n", $1, $2}'
-    echo ""
-}
-
-# Find all git repositories in a path and run git pull
-function git-repositories-pull() {
-    if [ $# -eq 0 ]; then
-        find . -type d -name ".git" -print0 | xargs -0 -n1 dirname | grep -v -e "\(/.cache/\|/.config/\)" | xargs -I repodir sh -c 'cd repodir ; printf "repodir ... " ; git pull'
-    else
-        find "$@" -type d -name ".git" -print0 | xargs -0 -n1 dirname | grep -v -e "\(/.cache/\|/.config/\)" | xargs -I repodir sh -c 'cd repodir ; printf "repodir ... " ; git pull'
-    fi;
-}
-
-# Columns git show
-function columns-git-show() {
-    cdiff -s -w 0 "$1^" "$1"
-}
-
-# Opens the current directory in Sublime Text, otherwise opens the given location
-function open-with-sublime-text() {
-    if [ $# -eq 0 ]; then
-        subl -a .;
-    else
-        subl -a "$@";
-    fi;
-}
-
-
-# Opens the current directory in Vim, otherwise opens the given location
-function open-with-vim() {
-    if [ $# -eq 0 ]; then
-        vim .;
-    else
-        vim "$@";
-    fi;
-}
-
-# Passthru grep
-function grep-passthru() {
-    if [ -z "$2" ]; then
-        egrep "$1|$"
-    else
-        egrep "$1|$" $2
-    fi
-}
 
 # Highlight a match in given color
 function highlight() {
@@ -176,14 +101,6 @@ function highlight() {
 # Commands usage statistics
 function history-stats() {
     fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n25
-}
-
-# Human readable path variable
-function path() {
-    LF=$(printf '\\\012_')
-    LF=${LF%_}
-
-    echo $PATH | sed 's/:/'"$LF"'/g'
 }
 
 # Recursively fix dir/file permissions on a given directory
@@ -244,28 +161,6 @@ function encrypt() {
 # Decrypt a file
 function decrypt() {
     openssl des3 -d -in $* -out $*.plain
-}
-
-# Small calc function
-function calc() {
-    echo "scale=2;$@" | bc -l
-}
-
-# Shortcut calc function
-function = () {
-    # credit goes to arzzen/calc.plugin.zsh
-    echo "scale=2;$@" | bc -l
-}
-
-# Notes tool
-function note() {
-    case $@ in
-        "-s") subl ~/.note.md;;
-        "-e") vim  ~/.note.md;;
-          "") cat  ~/.note.md | less;;
-           *) echo -e "$@\n" >> ~/.note.md
-              echo -e "\033[0;37m\"$@\" \033[1;30madded to your notes.\033[0m\n";;
-    esac
 }
 
 # Make a port (default 80) "real life" speeds
