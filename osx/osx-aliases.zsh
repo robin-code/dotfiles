@@ -7,10 +7,6 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 # Copy working directory to clipboard
 alias pwdc=' pwd | tr -d "\n" | pbcopy'
 
-# Use GNU tools instead of bsd ones
-alias awk='\gawk'
-#alias sed='\gsed'
-alias grep='\ggrep'
 
 # Disk usage
 alias df='gdf -h | grep -v tmpfs | grep -v "/docker/"'
@@ -34,11 +30,8 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Line wrapping
-alias wrap="tput smam"
-alias nowrap="tput rmam"
-
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
+#alias wrap="tput smam"
+#alias nowrap="tput rmam"
 
 # Kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description

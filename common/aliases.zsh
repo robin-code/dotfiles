@@ -53,17 +53,12 @@ alias kt='exa -hlTl --group-directories-first'
 alias ktt='exa -hlTlL=2 --group-directories-first'
 alias kttt='exa -hlTlL=3 --group-directories-first'
 
-# 1 letter commands shortcuts
-alias p=' dirs -v | head -10' ## most used dirs for current session
 
 
 # Others commands shortcuts
-alias dg='desk go'
 alias zd='z --del'
 alias k9='kill -9'
-alias rd='rmdir'
 alias md='mkdir -p'
-alias mcd='mkdir-cd'
 alias mkcd='mkdir-cd'
 alias rmrf="rm -rf"
 
@@ -140,6 +135,7 @@ alias 640='sudo chmod 640 -R'
 alias 644='sudo chmod 644 -R'
 alias 740='sudo chmod 740 -R'
 alias 750='sudo chmod 750 -R'
+alias 755='sudo chmod 755 -R'
 alias 775='sudo chmod 775 -R'
 alias 777='sudo chmod 777 -R'
 alias www="chown www-data:www-data * .* -R"
@@ -176,11 +172,9 @@ alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 alias ports="lsof -ni | grep LISTEN"
 alias ns="nslookup"
-alias he="sudo $EDITOR /etc/hosts"
 
 # Curl & web helpers
 alias dl='curl --continue-at - --location --progress-bar --remote-name --remote-time' ## download a file
-alias weather='curl -A curl wttr.in'
 alias wget-site='wget --mirror -p --convert-links -P'
 alias header='curl-header'
 alias purge='curl-purge'
@@ -196,7 +190,6 @@ alias clbin="curl -F 'clbin=<-' https://clbin.com"
 alias tableflip="echo '(ノಠ益ಠ)ノ彡┻━┻'" ## see https://gist.github.com/endolith/157796
 alias utf8test="wget -qO- http://8n1.org/utf8" ## test terminal UTF8 capabilities
 
-
 # Trim new lines and copy to clipboard
 alias c="tr -d '\n' | pbcopy"
 
@@ -209,32 +202,8 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Usage: `mergepdf input{1,2,3}.pdf`
 alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
 
-
-# Intuitive map function
-# For example, to list all directories that contain a certain file:
-# find . -name .gitattributes | map dirname
-alias map="xargs -n1"
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	alias "${method}"="lwp-request -m '${method}'"
-done
-
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume output volume 100'"
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec ${SHELL} -l"
-
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
 
 #alias for cnpm
 alias cnpm="npm --registry=https://registry.npm.taobao.org \
@@ -243,21 +212,9 @@ alias cnpm="npm --registry=https://registry.npm.taobao.org \
   --userconfig=$HOME/.cnpmrc"
 
 # 编辑器简写
-alias vi="vim"
-## alias k8s
-alias kgp="kubectl get pods"
-alias kgd="kubectl get deployment"
-alias kgs="kubectl get services "
-alias kdp="kubectl describe pods "
-
-
 # maven 构建命令跳过测试别名
 alias mi="mvn clean install -Dmaven.test.skip=true"
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
 alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
-
-# Get week number
-alias week='date +%V'
 
 # Shortcuts
 alias dl="cd ~/Downloads"
