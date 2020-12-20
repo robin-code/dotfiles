@@ -2,7 +2,7 @@
 
 echo "Starting apt install packages"
 
-sudo apt-getopt update
+sudo apt update
 
 PACKAGES=(
 #  bat
@@ -43,6 +43,6 @@ PACKAGES=(
 )
 
 echo "Installing packages..."
-sudo apt-get install "${PACKAGES[@]}"
+sudo apt install "${PACKAGES[@]}"
 
 echo "apt install complete"

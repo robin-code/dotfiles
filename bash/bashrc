@@ -155,13 +155,6 @@ else
 fi
 
 # Others commands shortcuts
-alias dg='desk go'
-alias zd='z --del'
-alias mu='mutt'
-alias mf='mutt -F'
-alias md='mkdir -p'
-alias mcd='mkdir-cd'
-alias mkcd='mkdir-cd'
 alias trm='trash-put'
 alias rmf="rm -rf"
 alias rmrf="rm -rf"
@@ -288,15 +281,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     alias pubkey="more ~/.ssh/id_rsa.pub | xclip | echo '=> Public key copied to pasteboard'"
 fi
-
-# Date & time helpers
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    alias cal='cal'
-else
-    alias cal='cal -3'
-fi
-alias week='date +%V'
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 # Network & ISP tests
 alias myip='dig +short myip.opendns.com @resolver1.opendns.com'
