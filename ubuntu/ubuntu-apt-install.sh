@@ -33,11 +33,12 @@ PACKAGES=(
   zsh bash
   ruby
   httpie
-  node npm yarn
+# node npm yarn
   git
   tmux vim
   curl wget
-  coreutils findutils grep gnu-tar gnu-sed gawk
+#  coreutils findutils
+#  gnu-tar gnu-sed gawk
   autojump
   trash-cli
 )

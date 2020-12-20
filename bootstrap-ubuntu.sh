@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+./ubuntu/ubuntu-apt-install.sh
+
 declare -A COPIES=(
     ['common/zshenv']='.zshenv'
     ['common/git/git_ssh_config']='.ssh/config'
