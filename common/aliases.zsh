@@ -53,6 +53,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias cl="clear"
+alias cls="clear"
 alias sz="source ~/.zshrc" ## Reload config
 alias sb="source ~/.bashrc"
 alias cd.="cd ~/dotfiles"

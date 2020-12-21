@@ -32,4 +32,6 @@ alias python=python3
 alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
 
 # Ignore macos files
-alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
+#alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
+
+alias mi-basic='j oms && cd trade-basic && mi && j oms'
