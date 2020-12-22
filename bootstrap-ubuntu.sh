@@ -2,6 +2,7 @@
 
 
 ./ubuntu/ubuntu-apt-install.sh
+./common/install-zsh-plugins.zsh
 
 declare -A COPIES=(
     ['common/zshenv']='.zshenv'
