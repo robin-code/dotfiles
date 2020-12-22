@@ -209,6 +209,7 @@ alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
 alias grbi='git rebase -i'
+alias gbr='git branch -r'
 
 alias del="trash-put"       # del / trash are shorter than rmtrash
 ## omz tmux alias
