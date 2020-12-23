@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+DEBUG=true
+function trace-time() {
+    if [ -n "$TT_START" ]; then
+        TT_END=$(date +%s.%N)
+        # Subtraction won't read scale variable
+        TT_DIFF=$(echo "scale=4; ($TT_END - $TT_START)/1" | bc -l)
+        echo -e "------------------------------------------------------------- ${TT_DIFF}\r${TT_MSG} "
+        TT_START=""
+        TT_MSG=""
+    fi
+
+    if [ ! $# -eq 0 ]; then
+        TT_START=$(date +%s.%N)
+        TT_MSG="$@"
+    fi
+}
+
+
+[[ -n "$DEBUG" ]] && trace-time "Initializing centos8 dotfiles"
+#
+DOTFILES_PATH=~/dotfiles
+BIN_PATH=${BIN_PATH:-~/bin}
+HOSTNAME=robin
+#
+[[ -n "$DEBUG" ]] && trace-time "Loading comonn aliases.zsh"
+source ${DOTFILES_PATH}/common/aliases.zsh
+[[ -n "$DEBUG" ]] && trace-time "Loading comonn functions.zsh"
+source ${DOTFILES_PATH}/common/functions.zsh
+[[ -n "$DEBUG" ]] && trace-time "Loading comonn snippets.zsh"
+source ${DOTFILES_PATH}/common/snippets.zsh
+[[ -n "$DEBUG" ]] && trace-time "Loading centos8 alias"
+source ${DOTFILES_PATH}/centos8/centos8-aliases.zsh
+[[ -n "$DEBUG" ]] && trace-time "export centos8 custom"
+source ${DOTFILES_PATH}/ubuntu/centos8-export.zsh
+[[ -n "$DEBUG" ]] && trace-time "Loading export  alias finished"
+
+
+ZSH_THEME="robbyrussell"
+export ZSH=$HOME/.oh-my-zsh
+autoload -Uz compinit
+compinit
+
+plugins=(docker mvn gradle zsh_reload autojump zsh-syntax-highlighting zsh-autosuggestions)
+
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+
+
+[[ -n "$DEBUG" ]] && trace-time "loading scm-breeze"
+setopt no_complete_aliases
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
+[[ -n "$DEBUG" ]] && trace-time "loading oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
