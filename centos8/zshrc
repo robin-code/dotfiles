@@ -32,7 +32,7 @@ source ${DOTFILES_PATH}/common/snippets.zsh
 [[ -n "$DEBUG" ]] && trace-time "Loading centos8 alias"
 source ${DOTFILES_PATH}/centos8/centos8-aliases.zsh
 [[ -n "$DEBUG" ]] && trace-time "export centos8 custom"
-source ${DOTFILES_PATH}/ubuntu/centos8-export.zsh
+source ${DOTFILES_PATH}/centos8/centos8-export.zsh
 [[ -n "$DEBUG" ]] && trace-time "Loading export  alias finished"
 
 
