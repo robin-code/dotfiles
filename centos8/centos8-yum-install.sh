@@ -9,6 +9,7 @@ PACKAGES=(
   automake
   cmake
   p7zip
+  unzip
   ranger
   zsh bash
   ruby
@@ -16,7 +17,6 @@ PACKAGES=(
   git
   tmux vim
   curl wget
-  autojump
   trash-cli
 )
 
