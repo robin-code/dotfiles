@@ -43,7 +43,7 @@ compinit
 
 plugins=(docker mvn gradle zsh_reload autojump zsh-syntax-highlighting zsh-autosuggestions)
 
-#[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 
 [[ -n "$DEBUG" ]] && trace-time "loading scm-breeze"
