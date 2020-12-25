@@ -5,7 +5,7 @@ export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=.:${JAVA_HOME}/bin:$PATH
 
 ##zookeeper
-ZOOKEEPER_HOME=/usr/local/lib/apache-zookeeper-3.6.2-bin
+export ZOOKEEPER_HOME=/usr/local/lib/apache-zookeeper-3.6.2-bin
 
 
 #maven
