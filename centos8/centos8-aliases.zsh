@@ -31,5 +31,3 @@ alias gkafka="cd /usr/local/lib/kafka_2.13-2.6.0"
 alias gactivemq="cd /usr/local/lib/apache-activemq-5.5.0"
 alias gnginx="cd /usr/local/lib/nginx-1.18.0"
 alias gzk="cd /usr/local/lib/apache-zookeeper-3.6.2"
-
-alias python='python3.6'

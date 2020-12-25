@@ -1,5 +1,5 @@
 ## jdkconfig 
-export JAVA_HOME=/usr/local/lib/jdk/jdk1.8
+export JAVA_HOME=/usr/java/jdk1.8.0_271-amd64
 export JRE_HOME=${JAVA_HOME}/jre
 export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
 export PATH=.:${JAVA_HOME}/bin:$PATH
