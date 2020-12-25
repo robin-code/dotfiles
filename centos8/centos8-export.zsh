@@ -6,6 +6,7 @@ export PATH=.:${JAVA_HOME}/bin:$PATH
 
 ##zookeeper
 export ZOOKEEPER_HOME=/usr/local/lib/apache-zookeeper-3.6.2-bin
+export PATH=$PATH:$ZOOKEEPER_HOME/bin
 
 #maven
 export M2_HOME=/usr/local/lib/apache-maven-3.6.3
