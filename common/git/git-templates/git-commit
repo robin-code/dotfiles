@@ -9,17 +9,22 @@
 
 # --- COMMIT END ---
 # Type can be
+#    func (add a function)
 #    feat (new feature)
 #    fix (bug fix)
 #    docs (changes to documentation)
 #    style (formatting, missing semi colons, etc; no code change)
 #    refactor (refactoring production code)
 #    test (adding missing tests, refactoring tests; no production code change)
-#    build (change build file)
+#    build (change build file.or pom file，依赖更新)
+#    apm (add log ,monitor,exception)
 #    ci (change ci config)
 #    revert（revert to some version)
+#    chore (无关紧要的修改，删除不需要的注解或导入，调整日志内容)
+#    conf (仅配置修改，例如spring配置文件，properties配置)
+#    wip (正在开发中，不完整提交，防止被merge)
+#    jvm (仅修改jvm参数)
 #    perf (promote performance)
-
 # --------------------
 # Remember to
 #    Separate subject from body with a blank line
