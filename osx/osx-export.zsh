@@ -32,3 +32,4 @@ export GIT_EDITOR=vim
 
 #rocktmq
 export NAMESRV_ADDR=localhost:9876
+export ROBIN_HOST=robin-study.top
