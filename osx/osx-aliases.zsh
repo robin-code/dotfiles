@@ -35,3 +35,8 @@ alias vs='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 #alias zip="zip -x *.DS_Store -x *__MACOSX* -x *.AppleDouble*"
 
 alias mi-basic='j oms && cd trade-basic && mi && j oms'
+
+alias start-nameserver='nohup sh ~/work/dev-tools/rocketmq-all-4.4.0-bin-release/bin/mqnamesrv &'
+alias start-broker='nohup sh ~/work/dev-tools/rocketmq-all-4.4.0-bin-release/bin/mqbroker -n localhost:9876 &'
+alias stop-nameserver='sh ~/work/dev-tools/rocketmq-all-4.4.0-bin-release/bin/mqshutdown namesrv'
+alias stop-broker='sh ~/work/dev-tools/rocketmq-all-4.4.0-bin-release/bin/mqshutdown broker'
