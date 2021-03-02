@@ -22,12 +22,18 @@ PACKAGES=(
   bash
   autojump
   tree
+  zsh-you-should-use
+  git
+
 
   trash-cli
   gitup
-  git
   tmux vim
   curl wget
+  minikube
+  podman
+
+
 
   gradle
   kotlin
@@ -38,10 +44,10 @@ PACKAGES=(
   node npm yarn
 
   mysql@5.7
+  zookeeper
   redis
   rabbitmq
-  minikube
-  podman
+
 
 
 )
