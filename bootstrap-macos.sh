@@ -6,7 +6,7 @@ declare -A COPIES=(
 )
 
 declare -A SYMLINKS=(
-    ['bash/inputrc']='.inputrc'
+#    ['bash/inputrc']='.inputrc'
     ['osx/zshrc']='.zshrc'
 #    ['others/vim/vim']='.vim'
 #    ['others/vim/vimrc']='.vimrc'

@@ -3,3 +3,4 @@ vim/vim/plugged
 
 .idea
 *.log
+.gradle/

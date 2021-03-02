@@ -51,8 +51,6 @@ brew install "${PACKAGES[@]}"
 
 echo "Installing cask..."
 CASKS=(
-#  dropbox
-  google-chrome
   iterm2
   postman
   macdown
