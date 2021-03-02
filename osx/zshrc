@@ -29,9 +29,9 @@ source ${DOTFILES_PATH}/common/aliases.zsh
 source ${DOTFILES_PATH}/common/functions.zsh
 [[ -n "$DEBUG" ]] && trace-time "Loading comonn snippets.zsh"
 source ${DOTFILES_PATH}/common/snippets.zsh
-[[ -n "$DEBUG" ]] && trace-time "Loading ubuntu alias"
+[[ -n "$DEBUG" ]] && trace-time "Loading osx alias"
 source ${DOTFILES_PATH}/osx/osx-aliases.zsh
-[[ -n "$DEBUG" ]] && trace-time "export ubuntu custom"
+[[ -n "$DEBUG" ]] && trace-time "export osx custom"
 source ${DOTFILES_PATH}/osx/osx-export.zsh
 
 [[ -n "$DEBUG" ]] && trace-time "Loading export alias finished"

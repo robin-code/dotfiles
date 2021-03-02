@@ -13,67 +13,41 @@ echo "Starting brew install packages"
 brew update
 
 PACKAGES=(
-#  bat
-#  ccat
-#  desk
-#  ripgrep
-#  sift
-#  ack
-#  icdiff
-#  fd
-#  lnav
-#  exa
-#  tldr
-#  xsv
-#  fzf
-#  pinentry-mac
-#  unison
-#  pv tree   dos2unix
-#  gnutls gnu-indent gnu-getopt  htop iftop imagemagick telnet
-#  m-cli lftp
-#ansible
-terminal-notifier
+#  coreutils findutils grep gnu-tar gnu-sed gawk
+#  httpie
+
   autoconf
   automake
-  cmake
-  p7zip
-  ranger
+  zsh
+  bash
+  autojump
+  tree
 
-  zsh bash
-
-  gradle
-  jenv
-  kotlin
-  maven
-  ruby
-
-  httpie
-  node npm yarn
   trash-cli
   gitup
   git
   tmux vim
-
-  sshrc
   curl wget
-  install coreutils findutils grep gnu-tar gnu-sed gawk
 
-  autojump
+  gradle
+  kotlin
+  maven
+  ruby
+  go
+  python
+  node npm yarn
+
+  mysql@5.7
+  redis
+  rabbitmq
+  minikube
+  podman
+
 
 )
 
 echo "Installing packages..."
 brew install "${PACKAGES[@]}"
-
-
-#brew cask install font-hack
-#brew cask install font-fira-code
-#brew cask install ngrok
-#brew cask install iterm2
-#brew cask install google-chrome
-#brew cask install visual-studio-code
-#brew cask install cyberduck
-#brew cask install filezilla
 
 echo "Installing cask..."
 CASKS=(
@@ -86,13 +60,12 @@ CASKS=(
   visual-studio-code
 #  qlimagesize
 #  qlcolorcode
-  qlmarkdown
+#  qlmarkdown
 #  webpquicklook
 #  qlstephen
-  quicklook-json
+#  quicklook-json
 #  qlprettypatch
 )
-
 echo "Installing cask apps..."
 brew install --cask "${CASKS[@]}"
 
