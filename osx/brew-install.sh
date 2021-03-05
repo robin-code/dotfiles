@@ -34,7 +34,7 @@ PACKAGES=(
   podman
 
 
-
+  graphviz
   gradle
   kotlin
   maven
